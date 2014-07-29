@@ -19,7 +19,14 @@ end
 
 get '/users/:id' do
   @user = User.find(params[:id])
-  erb :user
+  client = Yelp::Client.new({ consumer_key: ENV['YELP_CONSUMER_KEY'],
+                            consumer_secret: ENV['YELP_CONSUMER_SECRET'],
+                            token: ENV['YELP_TOKEN'],
+                            token_secret: ENV['YELP_TOKEN_SECRET']
+                          })
+  @bars = client.search('633 Folsom St., San Francisco', { term: 'bar', radius: 2, limit: 5 }).businesses
+
+  erb :show
 end
 
 
@@ -27,3 +34,6 @@ post '/users' do
   @user = User.create(name: params[:name], email: params[:email], password: params[:password])
     redirect "/users/#{@user.id}"
 end
+
+
+

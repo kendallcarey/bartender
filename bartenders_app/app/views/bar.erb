@@ -1,3 +1,4 @@
+<% @bars.each do |bar|%>
 <div class="bar-pic">
   <%=bar.image_url%>
 </div>
@@ -7,12 +8,8 @@
   <p><%=bar.phone_number%></p>
   <p><%=bar.location%></p>
 </div>
-<div class="bartender">
-  <% bartenders.each do |bartender| %>
-  <%= bartender.name %>
-  <%= bartender.specialty %>
-  <% end %>
-</div>
+<% end %>
+
 <div class="new-bartender">
   <h3>Submit your new favorite mixologist!</h3>
   <div class="form">

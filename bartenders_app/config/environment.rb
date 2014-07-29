@@ -16,6 +16,7 @@ require 'active_record'
 require 'logger'
 
 require 'sinatra'
+require 'yelp'
 
 if development?
   require "sinatra/reloader"
