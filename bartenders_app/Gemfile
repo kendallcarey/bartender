@@ -20,8 +20,7 @@ gem 'httparty'
 
 
 gem 'rake'
-
-gem 'shotgun'
+gem 'rack-flash3'
 
 group :test do
   gem 'shoulda-matchers'
@@ -31,6 +30,7 @@ group :test do
 end
 
 group :test, :development do
+  gem 'shotgun'
   gem 'dotenv-rails'
   gem 'rspec'
   gem 'factory_girl'
