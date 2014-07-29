@@ -1,0 +1,28 @@
+<div class="bar-pic">
+  <%=bar.image_url%>
+</div>
+<div class="bar-info">
+  <h2><%=bar.name%></h2>
+  <div class="stars"><%=bar.rating%></div>
+  <p><%=bar.phone_number%></p>
+  <p><%=bar.location%></p>
+</div>
+<div class="bartender">
+  <% bartenders.each do |bartender| %>
+  <%= bartender.name %>
+  <%= bartender.specialty %>
+  <% end %>
+</div>
+<div class="new-bartender">
+  <h3>Submit your new favorite mixologist!</h3>
+  <div class="form">
+    <input type="text" class="form" id="bartender-name" placeholder="What's their name?">
+  </div>
+  <div class="form">
+    <input type="text" class="form" id="bartender-specialty" placeholder="What's the best cocktail they serve?">
+  </div>
+  <div class="stars"></div>
+  <div class="form">
+    <button type="submit" class="btn">Sign Up!</button>
+  </div>
+</div>

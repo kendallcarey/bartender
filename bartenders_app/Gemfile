@@ -10,7 +10,7 @@ gem 'sinatra-contrib'
 
 # Use Thin for our web server
 gem 'thin'
-gem 'bootstrap-star-rating'
+# gem 'bootstrap-star-rating'
 # activerecord ORM
 gem 'activesupport'
 gem 'activerecord'
@@ -18,7 +18,7 @@ gem 'httparty'
 
 #face recognition
 
-
+gem 'yelp'
 gem 'rake'
 gem 'rack-flash3'
 
@@ -30,6 +30,7 @@ group :test do
 end
 
 group :test, :development do
+  gem 'debugger'
   gem 'shotgun'
   gem 'dotenv-rails'
   gem 'rspec'

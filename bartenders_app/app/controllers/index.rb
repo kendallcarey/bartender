@@ -15,15 +15,15 @@ post '/sessions' do
 end
 
 get '/users/#{@user.id}' do
-  var = VAR.find(params[:id])
+  @user = User.find(params[:id])
   erb :user
 end
 
-get '/signup' do
+get '/users/new' do
   erb :sign_up
 end
 
-post '/user/new' do
-  @user = User.create(params[:name], params[:email], params[:password])
-    redirect "/user/#{user.id}"
+post '/users' do
+  @user = User.create(name: params[:name], email: params[:email], password: params[:password])
+    redirect "/user/#{@user.id}"
 end

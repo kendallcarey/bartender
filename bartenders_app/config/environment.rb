@@ -18,7 +18,7 @@ require 'logger'
 
 require 'sinatra'
 require "sinatra/reloader" if development?
-
+require 'debugger' if development?
 
 
 require 'erb'
