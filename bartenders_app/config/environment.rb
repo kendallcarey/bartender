@@ -15,11 +15,14 @@ require 'pg'
 require 'active_record'
 require 'logger'
 
-
 require 'sinatra'
-require "sinatra/reloader" if development?
-require 'debugger' if development?
 
+if development?
+  require "sinatra/reloader"
+  require 'debugger'
+  require 'dotenv'
+  Dotenv.load
+end
 
 require 'erb'
 
