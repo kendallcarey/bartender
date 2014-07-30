@@ -47,9 +47,7 @@ get '/users/:user_id/bar/:bar_id' do
   puts "Client: #{client}"
   puts params
   @bar = client.search("San Francisco, CA" , { term: "bar", id: "southside-spirit-house-san-francisco" }, limit: 1).businesses
-  p "***************"
   p @bar
-  p "***************"
   erb :bar
 end
 
