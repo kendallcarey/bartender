@@ -11,6 +11,7 @@ function bindAll() {
   //   return $(this).attr('data-score');
   // }
   $('form').on('submit', doubleCheck);
+  $('.stars').raty('score', number);
 }
 
 

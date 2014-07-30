@@ -21,6 +21,7 @@ gem 'httparty'
 gem 'yelp'
 gem 'rake'
 gem 'rack-flash3'
+gem 'factory_girl'
 
 group :test do
   gem 'shoulda-matchers'
@@ -34,7 +35,6 @@ group :test, :development do
   gem 'shotgun'
   gem 'dotenv-rails'
   gem 'rspec'
-  gem 'factory_girl'
   gem 'faker'
 end
 

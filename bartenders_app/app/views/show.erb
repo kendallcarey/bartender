@@ -1,32 +1,8 @@
 <div class="search">
-<button type="submit" class="location">Check in at your location!</button>
-
-<% @bars.each do |bar|%>
-<div class="bar-pic">
-  <%=bar.image_url%>
+<button type="submit" class="location">Update your location!</button>
+<div class="bars-closeby">
+<%= erb :_show %>
 </div>
-<div class="bar-info">
-  <h2><%=bar.name%></h2>
-  <div class="stars"><%=bar.rating%></div>
-  <p><%=bar.display_phone%></p>
-  <p><%=bar.location%></p>
-</div>
-<% end %>
-
-<div class="new-bartender">
-  <h3>Submit your new favorite mixologist!</h3>
-  <div class="form">
-    <input type="text" class="form" id="bartender-name" placeholder="What's their name?">
-  </div>
-  <div class="form">
-    <input type="text" class="form" id="bartender-specialty" placeholder="What's the best cocktail they serve?">
-  </div>
-  <div class="stars"></div>
-  <div class="form">
-    <button type="submit" class="btn">Sign Up!</button>
-  </div>
 </div>
 
-</div>
 
-<%= erb :_user %>

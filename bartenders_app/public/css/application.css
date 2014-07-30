@@ -12,8 +12,88 @@ body {
 
 a {
   color:white;
+  text-decoration: none;
 }
 
 h1 {
   font-size: 45px;
+}
+
+.section {
+  clear: both;
+  padding: 0px;
+  margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+  display: block;
+  float:left;
+  margin: 1% 0 1% 1%;
+  background-color: black;
+  opacity: 0.75;
+}
+.col:first-child { margin-left: 0; }
+
+
+/*  GROUPING  */
+.group:before,
+.group:after {
+  content:"";
+  display:table;
+}
+.group:after {
+  clear:both;
+}
+.group {
+    zoom:1; /* For IE 6/7 */
+}
+
+
+/*  GRID OF FOUR  */
+.span_4_of_4 {
+  width: 100%;
+}
+.span_3_of_4 {
+  width: 74.6%;
+}
+.span_2_of_4 {
+  width: 49.2%;
+}
+.span_1_of_4 {
+  width: 23.8%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .col {
+    margin: 1% 0 1% 0%;
+    background-color: black;
+    opacity: 0.75;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .span_4_of_4 {
+    width: 100%;
+  }
+  .span_3_of_4 {
+    width: 100%;
+  }
+  .span_2_of_4 {
+    width: 100%;
+  }
+  .span_1_of_4 {
+    width: 100%;
+  }
+}
+
+.bar-pic {
+  padding-top: 10px;
+}
+
+.location {
+  padding:5px;
+  margin: 15px;
 }

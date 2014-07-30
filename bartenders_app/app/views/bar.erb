@@ -1,22 +1,21 @@
-<% @bars.each do |bar|%>
 <div class="bar-pic">
-  <%=bar.image_url%>
+  <img src=<%= @bar.image_url %> class="bar-image">
 </div>
 <div class="bar-info">
-  <h2><%=bar.name%></h2>
-  <div class="stars"><%=bar.rating%></div>
-  <p><%=bar.phone_number%></p>
-  <p><%=bar.location%></p>
+  <h2><%=@bar.name%></h2>
+  <img src=<%=@bar.rating_img_url_small%> class="stars">
+  <p><%=@bar.display_phone%></p>
+  <p><%=@bar.location.address%></p>
 </div>
-<% end %>
 
 <div class="new-bartender">
   <h3>Submit your new favorite mixologist!</h3>
   <div class="form">
-    <input type="text" class="form" id="bartender-name" placeholder="What's their name?">
+    <input type="text" id="bartender-name" placeholder="Name">
   </div>
+  <p>Recommend the best cocktail they serve!</p>
   <div class="form">
-    <input type="text" class="form" id="bartender-specialty" placeholder="What's the best cocktail they serve?">
+    <input type="text" class="form" id="bartender-specialty" placeholder="Cocktail">
   </div>
   <div class="stars"></div>
   <div class="form">

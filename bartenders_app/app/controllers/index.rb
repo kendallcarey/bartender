@@ -19,14 +19,38 @@ end
 
 get '/users/:id' do
   @user = User.find(params[:id])
+  begin
   client = Yelp::Client.new({ consumer_key: ENV['YELP_CONSUMER_KEY'],
                             consumer_secret: ENV['YELP_CONSUMER_SECRET'],
                             token: ENV['YELP_TOKEN'],
                             token_secret: ENV['YELP_TOKEN_SECRET']
                           })
-  @bars = client.search('633 Folsom St., San Francisco', { term: 'bar', radius: 2, limit: 5 }).businesses
+rescue OpenURI::HTTPError => e
+  p" Open URI error #{e.inspect}"
+rescue StandardError => e
+  p "Standard Error #{e.inspect}"
+end
+  @bars = client.search('633 Folsom St., San Francisco', { term: 'bar', radius: 1, limit: 16 }).businesses
 
   erb :show
+end
+
+get '/users/:user_id/bar/:bar_id' do
+  p params[:user_id]
+  p params[:bar_id]
+  @user = User.find(params[:user_id])
+  client = Yelp::Client.new({ consumer_key: ENV['YELP_CONSUMER_KEY'],
+                            consumer_secret: ENV['YELP_CONSUMER_SECRET'],
+                            token: ENV['YELP_TOKEN'],
+                            token_secret: ENV['YELP_TOKEN_SECRET']
+                          })
+  puts "Client: #{client}"
+  puts params
+  @bar = client.search("San Francisco, CA" , { term: "bar", id: "southside-spirit-house-san-francisco" }, limit: 1).businesses
+  p "***************"
+  p @bar
+  p "***************"
+  erb :bar
 end
 
 
