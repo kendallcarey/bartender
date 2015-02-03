@@ -17,6 +17,11 @@ require 'logger'
 
 require 'sinatra'
 require 'yelp'
+require 'rack-flash'
+require 'bcrypt'
+require 'httparty'
+require 'rspec'
+require 'geocoder'
 
 if development?
   require "sinatra/reloader"
@@ -26,6 +31,7 @@ if development?
 end
 
 require 'erb'
+
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
@@ -52,3 +58,5 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+use Rack::Flash, :sweep => true, :accessorize => [:notice, :error]

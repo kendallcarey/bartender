@@ -1,24 +1,16 @@
-<div class="bar-pic">
-  <img src=<%= @bar.image_url %> class="bar-image">
-</div>
-<div class="bar-info">
-  <h2><%=@bar.name%></h2>
-  <img src=<%=@bar.rating_img_url_small%> class="stars">
-  <p><%=@bar.display_phone%></p>
-  <p><%=@bar.location.address%></p>
-</div>
-
+<form class="partial" action="/render-partial" method="GET" layout="none">
 <div class="new-bartender">
   <h3>Submit your new favorite mixologist!</h3>
-  <div class="form">
+  <div>
     <input type="text" id="bartender-name" placeholder="Name">
   </div>
   <p>Recommend the best cocktail they serve!</p>
-  <div class="form">
+  <div>
     <input type="text" class="form" id="bartender-specialty" placeholder="Cocktail">
   </div>
   <div class="stars"></div>
-  <div class="form">
+  <div>
     <button type="submit" class="btn">Sign Up!</button>
   </div>
 </div>
+</form>

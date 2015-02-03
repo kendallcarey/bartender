@@ -1,6 +1,6 @@
-  class CreateCreateBarTable < ActiveRecord::Migration
+  class CreateBar < ActiveRecord::Migration
     def change
-      create_table :createbartables do |t|
+      create_table :bars do |t|
       t.string :name
       t.string :location
       t.integer :phone_number

@@ -1,3 +1,6 @@
+html { height: 100% }
+body { height: 100%;}
+
 body {
   margin-top: 100px;
   text-align: center;
@@ -46,7 +49,7 @@ h1 {
   clear:both;
 }
 .group {
-    zoom:1; /* For IE 6/7 */
+  zoom:1; /* For IE 6/7 */
 }
 
 
@@ -97,3 +100,24 @@ h1 {
   padding:5px;
   margin: 15px;
 }
+
+.selected-bar-pic {
+  display: inline-block;
+  padding-right: 20px;
+  padding-bottom: 60px;
+}
+
+.selected-bar-info {
+  display: inline-block;
+  padding-right: 20px;
+}
+
+.partial {
+  display: inline-block;
+}
+#map-canvas {
+  margin: 0 auto;
+  height: 300px;
+  width: 800px;
+}
+

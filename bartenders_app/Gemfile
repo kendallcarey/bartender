@@ -22,6 +22,8 @@ gem 'yelp'
 gem 'rake'
 gem 'rack-flash3'
 gem 'factory_girl'
+gem 'rspec'
+gem 'geocoder'
 
 group :test do
   gem 'shoulda-matchers'
