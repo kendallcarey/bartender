@@ -1,0 +1,21 @@
+<h3>The top 16 bars within 1 mile of you!</h3>
+<div class="section group">
+  <% if @bars %>
+  <% @bars.each do |bar|%>
+  <div class="col span_1_of_4">
+    <div class="bar-pic">
+      <img src=<%=bar.image_url%> class="bar-image">
+    </div>
+    <div class="bar-info">
+      <h2><%=bar.name%></h2>
+      <img src=<%=bar.rating_img_url_small%> class="stars">
+
+      <p><%=bar.location.address[0]%></p>
+    </div>
+  </div>
+  <% end %>
+  <% end %>
+  <div class="add-partial"></div>
+</div>
+
+<!-- <p><%  #bar.display_phone%></p> -->
